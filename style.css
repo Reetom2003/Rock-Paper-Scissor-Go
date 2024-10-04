@@ -1,0 +1,137 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('images/ai-generated-9040040_1280.jpg') no-repeat center center/cover;
+}
+
+::selection {
+    color: white;
+    background-color: #7d2ae8;
+}
+
+.container {
+    padding: 4rem 7rem;
+    border-radius: 14px;
+    background-color: rgba(255, 223, 70, 0.65);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.result_images {
+    display: flex;
+    column-gap: 7rem;
+}
+
+.container.start .user_result {
+    transform-origin: left;
+    animation: userShake 0.7s ease infinite;
+}
+
+@keyframes userShake {
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+.container.start .computer_result {
+    transform-origin: right;
+    animation: computerShake 0.7s ease infinite;
+}
+
+@keyframes computerShake {
+    50% {
+        transform: rotate(-10deg);
+    }
+}
+
+.result_images img {
+    width: 130px;
+}
+
+.user_result img {
+    transform: rotateY(180deg);
+}
+
+.result {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+
+.option_images img {
+    width: 70px;
+}
+
+.option_images {
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+    justify-content: space-between;
+}
+
+.container.start .option_images {
+    pointer-events: none;
+}
+
+.option_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.option_image:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.option_image.active {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.option_image img {
+    pointer-events: none;
+}
+
+.option_image p {
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    pointer-events: none;
+}
+.scores {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.scores p {
+    margin: 0 1rem;
+}
+
+.final_result {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    color: yellow;
+    font-weight: 700;
+}
